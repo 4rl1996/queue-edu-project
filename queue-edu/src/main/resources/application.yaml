@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: queue-edu
+  rabbitmq:
+    username: 'override-guest'
+    password: 'override-password'
+
+rabbit:
+  properties:
+    queueName: com.4rl1996.queue
+    enablePublishing: false
+server:
+  port: 8080

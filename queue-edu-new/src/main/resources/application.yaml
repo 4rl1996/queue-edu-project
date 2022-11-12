@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: queue-edu-new
+  rabbitmq:
+    username: 'override-guest'
+    password: 'override-password'
+
+rabbit:
+  properties:
+    queueName: com.4rl1996.queue-new
+    exchangeName: com.4rl1996.fanout
+
+server:
+  port: 8081
