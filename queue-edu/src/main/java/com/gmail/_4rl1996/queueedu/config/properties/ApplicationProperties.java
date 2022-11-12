@@ -7,5 +7,4 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "rabbit.properties")
 public class ApplicationProperties {
     private String queueName;
-    private boolean enablePublishing;
 }

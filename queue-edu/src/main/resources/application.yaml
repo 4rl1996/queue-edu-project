@@ -8,6 +8,6 @@ spring:
 rabbit:
   properties:
     queueName: com.4rl1996.queue
-    enablePublishing: false
+    exchangeName: com.4rl1996.fanout
 server:
   port: 8080
