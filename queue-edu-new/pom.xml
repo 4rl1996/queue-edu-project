@@ -10,23 +10,16 @@
     </parent>
     <groupId>com.gmail._4rl1996</groupId>
     <artifactId>queue-edu-new</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>queue-edu-new</name>
     <description>queue-edu-new</description>
     <properties>
         <java.version>11</java.version>
-        <api-contracts.version>0.0.1</api-contracts.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.gmail._4rl1996</groupId>
-            <artifactId>api-contracts</artifactId>
-            <version>${api-contracts.version}</version>
         </dependency>
 
         <dependency>

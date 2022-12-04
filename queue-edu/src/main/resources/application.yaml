@@ -11,3 +11,5 @@ rabbit:
     exchangeName: com.4rl1996.fanout
 server:
   port: 8080
+
+autostartup: false

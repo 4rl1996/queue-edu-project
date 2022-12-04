@@ -1,6 +1,6 @@
 package com.gmail._4rl1996.queueedunew.producer;
 
-import com.gmail._4rl1996.apicontracts.message.TestMessageNew;
+import com.gmail._4rl1996.queueedunew.message.TestMessageNew;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
