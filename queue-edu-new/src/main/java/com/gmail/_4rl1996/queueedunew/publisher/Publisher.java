@@ -1,7 +1,7 @@
 package com.gmail._4rl1996.queueedunew.publisher;
 
+import com.gmail._4rl1996.message.TestMessageNew;
 import com.gmail._4rl1996.queueedunew.config.properties.ApplicationProperties;
-import com.gmail._4rl1996.queueedunew.message.TestMessageNew;
 import com.gmail._4rl1996.queueedunew.producer.Producer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;

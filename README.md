@@ -6,6 +6,8 @@
 
 В каталоге /dev выполнить команду <strong>docker-compose up -d</strong>
 
+В каталоге /queue-edu-new-api <strong>mvn clean install</strong>
+
 
 В разных терминалах выполнить команду 
 

@@ -13,9 +13,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>queue-edu</name>
     <description>queue-edu</description>
+
     <properties>
         <java.version>11</java.version>
+        <api.version>0.0.1</api.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,29 +36,31 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.gmail._4rl1996</groupId>
-            <artifactId>queue-edu-new</artifactId>
-            <version>0.0.2</version>
+            <artifactId>queue-edu-new-api</artifactId>
+            <version>${api.version}</version>
         </dependency>
 
     </dependencies>
 
-<!--    Закомментировал билд секцию, чтобы не собирался отдельно исполняемый jar с зависимостями
+<!--    Если убрать билд секцию,то не будет собираться отдельно исполняемый jar с зависимостями
         Приложение не будет запускаться из терминала с "java -jar", но будет стартовать с "spring-boot:run"-->
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

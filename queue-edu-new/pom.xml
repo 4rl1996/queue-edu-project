@@ -13,9 +13,12 @@
     <version>0.0.2</version>
     <name>queue-edu-new</name>
     <description>queue-edu-new</description>
+
     <properties>
         <java.version>11</java.version>
+        <api.version>0.0.1</api.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,18 +42,23 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.gmail._4rl1996</groupId>
+            <artifactId>queue-edu-new-api</artifactId>
+            <version>${api.version}</version>
+        </dependency>
+
     </dependencies>
 
-    <!--    Закомментировал билд секцию, чтобы не собирался отдельно jar с зависимостями.
-            Будет собираться только неисполняемый jar без зависимостей, который используется для сборки в проекте queue-edu как отдельная библиотека.
-            Приложение не будет запускаться из терминала с "java -jar", но будет стартовать с "spring-boot:run"
+    <!--     Если убрать билд секцию,то не будет собираться отдельно исполняемый jar с зависимостями
+        Приложение не будет запускаться из терминала с "java -jar", но будет стартовать с "spring-boot:run"
             -->
 
-<!--        <build>-->
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <groupId>org.springframework.boot</groupId>-->
-<!--                    <artifactId>spring-boot-maven-plugin</artifactId>-->
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
 
     <!--    В секции executions можно указать название исполняемого файла со всеми зависмостями,
             который можно запускать в терминале с java -jar.
@@ -66,8 +74,8 @@
     <!--                    </execution>-->
     <!--                </executions>-->
 
-<!--                </plugin>-->
-<!--            </plugins>-->
-<!--        </build>-->
+                </plugin>
+            </plugins>
+        </build>
 
 </project>

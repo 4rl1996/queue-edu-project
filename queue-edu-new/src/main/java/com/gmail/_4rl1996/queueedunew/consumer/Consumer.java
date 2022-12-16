@@ -1,6 +1,6 @@
 package com.gmail._4rl1996.queueedunew.consumer;
 
-import com.gmail._4rl1996.queueedunew.message.TestMessageNew;
+import com.gmail._4rl1996.message.TestMessageNew;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;

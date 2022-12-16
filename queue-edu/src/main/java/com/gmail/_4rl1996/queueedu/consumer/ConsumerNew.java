@@ -1,6 +1,6 @@
 package com.gmail._4rl1996.queueedu.consumer;
 
-import com.gmail._4rl1996.queueedunew.message.TestMessageNew;
+import com.gmail._4rl1996.message.TestMessageNew;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;

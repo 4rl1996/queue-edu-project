@@ -1,4 +1,4 @@
-package com.gmail._4rl1996.queueedunew.message;
+package com.gmail._4rl1996.message;
 
 import lombok.Data;
 
