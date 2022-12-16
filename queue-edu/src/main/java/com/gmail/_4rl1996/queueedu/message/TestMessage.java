@@ -1,25 +1,22 @@
-package com.gmail._4rl1996.apicontracts.message;
+package com.gmail._4rl1996.queueedu.message;
 
 import lombok.Data;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.UUID;
 
 @Data
 public class TestMessage {
 
-    private AtomicLong messageCounter = new AtomicLong(0);
-
-    private static final String message = "The number of message is ";
-
+    private  UUID id;
+    private static final String message = "Message id is ";
     private String creationTime;
 
     @Override
     public String toString() {
         return message +
-                messageCounter +
+                id +
                 ". " +
                 "Message was created at " +
                 creationTime;
     }
-
 }
