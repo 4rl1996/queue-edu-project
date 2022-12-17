@@ -1,0 +1,182 @@
+{
+  "exchanges": [
+    {
+      "name": "com.4rl1996.direct",
+      "vhost": "/",
+      "type": "direct",
+      "durable": false,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "com.4rl1996.fanout",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": false,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.exchange.old.message",
+      "vhost": "/",
+      "type": "direct",
+      "durable": false,
+      "auto_delete": false,
+      "internal": true,
+      "arguments": {}
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.exchange.new.message",
+      "vhost": "/",
+      "type": "direct",
+      "durable": false,
+      "auto_delete": false,
+      "internal": true,
+      "arguments": {}
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.new.service.exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": false,
+      "auto_delete": false,
+      "internal": true,
+      "arguments": {}
+    }
+  ],
+  "queues": [
+    {
+      "name": "com.4rl1996.queue.edu.old.message",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "com.4rl1996.dlq.queue.edu.exchange.old.message",
+        "x-dead-letter-routing-key": "com.4rl1996.dlq.queue.edu.old.message.key"
+      }
+    },
+    {
+      "name": "com.4rl1996.queue.edu.new.message",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "com.4rl1996.dlq.queue.edu.exchange.new.message",
+        "x-dead-letter-routing-key": "com.4rl1996.dlq.queue.edu.new.message.key"
+      }
+    },
+    {
+      "name": "com.4rl1996.queue.edu.new.service",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "com.4rl1996.dlq.queue.edu.new.service.exchange",
+        "x-dead-letter-routing-key": "com.4rl1996.dlq.queue.edu.new.service.key"
+      }
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.old.message",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-max-length": 15,
+        "x-overflow": "reject-publish"
+      }
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.new.message",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-max-length": 11,
+        "x-overflow": "reject-publish"
+      }
+    },
+    {
+      "name": "com.4rl1996.dlq.queue.edu.new.service",
+      "vhost": "/",
+      "durable": false,
+      "auto_delete": false,
+      "arguments": {
+        "x-max-length": 7,
+        "x-overflow": "reject-publish"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "source": "com.4rl1996.direct",
+      "vhost": "/",
+      "destination": "com.4rl1996.queue.edu.old.message",
+      "destination_type": "queue",
+      "routing_key": "com.4rl1996.queue.edu.key",
+      "arguments": {}
+    },
+    {
+      "source": "com.4rl1996.fanout",
+      "vhost": "/",
+      "destination": "com.4rl1996.queue.edu.new.message",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "com.4rl1996.fanout",
+      "vhost": "/",
+      "destination": "com.4rl1996.queue.edu.new.service",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "com.4rl1996.dlq.queue.edu.exchange.old.message",
+      "vhost": "/",
+      "destination": "com.4rl1996.dlq.queue.edu.old.message",
+      "destination_type": "queue",
+      "routing_key": "com.4rl1996.dlq.queue.edu.old.message.key",
+      "arguments": {}
+    },
+    {
+      "source": "com.4rl1996.dlq.queue.edu.exchange.new.message",
+      "vhost": "/",
+      "destination": "com.4rl1996.dlq.queue.edu.new.message",
+      "destination_type": "queue",
+      "routing_key": "com.4rl1996.dlq.queue.edu.new.message.key",
+      "arguments": {}
+    },
+    {
+      "source": "com.4rl1996.dlq.queue.edu.new.service.exchange",
+      "vhost": "/",
+      "destination": "com.4rl1996.dlq.queue.edu.new.service",
+      "destination_type": "queue",
+      "routing_key": "com.4rl1996.dlq.queue.edu.new.service.key",
+      "arguments": {}
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "users": [
+    {
+      "name": "override-guest",
+      "password": "override-password",
+      "tags": "administrator"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "override-guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ]
+}

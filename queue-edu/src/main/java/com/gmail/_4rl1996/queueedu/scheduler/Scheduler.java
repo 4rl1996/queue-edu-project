@@ -4,6 +4,7 @@ import com.gmail._4rl1996.queueedu.config.properties.ApplicationProperties;
 import com.gmail._4rl1996.queueedu.message.TestMessage;
 import com.gmail._4rl1996.queueedu.producer.Producer;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -16,11 +17,11 @@ public class Scheduler {
     private final ApplicationProperties applicationProperties;
     private final Producer producer;
 
-    //    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     void publishMessage() {
         TestMessage testMessage = new TestMessage();
         testMessage.setCreationTime(Instant.now().toString());
         testMessage.setId(UUID.randomUUID());
-        producer.sendMessage(applicationProperties.getQueueName(), testMessage);
+        producer.sendMessage(applicationProperties.getDirectExchangeName(), applicationProperties.getRoutingKey(), testMessage);
     }
 }
