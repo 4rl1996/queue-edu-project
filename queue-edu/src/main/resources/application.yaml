@@ -7,9 +7,11 @@ spring:
 
 rabbit:
   properties:
-    queueName: com.4rl1996.queue
-    exchangeName: com.4rl1996.fanout
+    queueEduName: com.4rl1996.queue-edu-old-message
+    routingKey: com.4rl1996.queue-edu-key
+    queueEduNewName: com.4rl1996.queue-edu-new-message
+    fanoutExchangeName: com.4rl1996.fanout
+    directExchangeName: com.4rl1996.direct
+
 server:
   port: 8080
-
-autostartup: false
