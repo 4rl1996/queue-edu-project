@@ -17,7 +17,7 @@ public class Scheduler {
     private final ApplicationProperties applicationProperties;
     private final Producer producer;
 
-        @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     void publishMessage() {
         TestMessage testMessage = new TestMessage();
         testMessage.setCreationTime(Instant.now().toString());

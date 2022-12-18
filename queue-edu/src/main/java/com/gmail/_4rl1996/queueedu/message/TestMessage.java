@@ -7,7 +7,7 @@ import java.util.UUID;
 @Data
 public class TestMessage {
 
-    private  UUID id;
+    private UUID id;
     private static final String message = "Message id is ";
     private String creationTime;
 
