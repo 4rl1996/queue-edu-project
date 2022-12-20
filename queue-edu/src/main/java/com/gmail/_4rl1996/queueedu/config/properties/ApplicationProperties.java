@@ -8,7 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ApplicationProperties {
     private String queueEduName;
     private String queueEduNewName;
-    private String dlqEduQueueKeyName;
+    private String dlqEduQueueName;
+    private String dlqEduQueueNewName;
     private String fanoutExchangeName;
     private String directExchangeName;
     private String routingKey;

@@ -16,6 +16,7 @@ rabbit:
     dlqEduQueueName: com.4rl1996.dlq.queue.edu.old.message
     dlqEduQueueKeyName: com.4rl1996.dlq.queue.edu.old.message.key
     queueEduNewName: com.4rl1996.queue.edu.new.message
+    dlqEduQueueNewName: com.4rl1996.dlq.fanout.queue.edu.new.service
     fanoutExchangeName: com.4rl1996.fanout
     directExchangeName: com.4rl1996.direct
 
