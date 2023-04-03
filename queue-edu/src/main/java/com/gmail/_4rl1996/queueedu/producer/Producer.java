@@ -11,7 +11,7 @@ public class Producer {
 
     private final RabbitTemplate rabbitTemplate;
 
-    public void sendMessage(String queueName, TestMessage testMessage) {
-        rabbitTemplate.convertAndSend(queueName, testMessage);
+    public void sendMessage(String exchange, String routingKey, TestMessage testMessage) {
+        rabbitTemplate.convertAndSend(exchange, routingKey, testMessage);
     }
 }

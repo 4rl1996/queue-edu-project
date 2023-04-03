@@ -7,7 +7,10 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-    environment:
-      RABBITMQ_DEFAULT_USER: "override-guest"
-      RABBITMQ_DEFAULT_PASS: "override-password"
-
+    volumes:
+      - type: bind
+        source: ./rabbitmq.conf
+        target: /etc/rabbitmq/rabbitmq.conf
+      - type: bind
+        source: ./rabbitmq-defs.json
+        target: /etc/rabbitmq/rabbitmq-defs.json

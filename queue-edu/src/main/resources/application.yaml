@@ -4,12 +4,23 @@ spring:
   rabbitmq:
     username: 'override-guest'
     password: 'override-password'
+    listener:
+      simple:
+        default-requeue-rejected: false
 
 rabbit:
   properties:
-    queueName: com.4rl1996.queue
-    exchangeName: com.4rl1996.fanout
+    queueEduName: com.4rl1996.queue.edu.old.message
+    routingKey: com.4rl1996.queue.edu.key
+    dlqEduExchangeName: com.4rl1996.dlq.queue.edu.exchange.old.message
+    dlqEduQueueName: com.4rl1996.dlq.queue.edu.old.message
+    dlqEduQueueKeyName: com.4rl1996.dlq.queue.edu.old.message.key
+    queueEduNewName: com.4rl1996.queue.edu.new.message
+    dlqEduExchangeNewName: com.4rl1996.dlq.queue.edu.exchange.new.message
+    dlqEduQueueNewName: com.4rl1996.dlq.queue.edu.new.message
+    dlqEduQueueKeyNewName: com.4rl1996.dlq.queue.edu.new.message.key
+    fanoutExchangeName: com.4rl1996.fanout
+    directExchangeName: com.4rl1996.direct
+
 server:
   port: 8080
-
-autostartup: false
